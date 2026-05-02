@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yb.dao.HuozhuDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.yb.entity.HuozhuEntity" id="huozhuMap">
+        <result property="huozhuzhanghao" column="huozhuzhanghao"/>
+        <result property="huozhuxingming" column="huozhuxingming"/>
+        <result property="mima" column="mima"/>
+        <result property="xingbie" column="xingbie"/>
+        <result property="lianxifangshi" column="lianxifangshi"/>
+        <result property="touxiang" column="touxiang"/>
+        <result property="pquestion" column="pquestion"/>
+        <result property="panswer" column="panswer"/>
+        <result property="status" column="status"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.yb.entity.vo.HuozhuVO" >
+		SELECT * FROM huozhu  huozhu         
+        <where>${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.yb.entity.vo.HuozhuVO" >
+		SELECT  huozhu.* FROM huozhu  huozhu 	
+ 		<where>${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.yb.entity.view.HuozhuView" >
+
+		SELECT  huozhu.* FROM huozhu  huozhu 	        
+        <where>${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.yb.entity.view.HuozhuView" >
+		SELECT * FROM huozhu  huozhu <where>${ew.sqlSegment}</where>
+	</select>
+	
+
+
+</mapper>

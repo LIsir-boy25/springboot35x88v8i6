@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yb.dao.TixianjiluDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.yb.entity.TixianjiluEntity" id="tixianjiluMap">
+        <result property="yue" column="yue"/>
+        <result property="tixianshijian" column="tixianshijian"/>
+        <result property="sijizhanghao" column="sijizhanghao"/>
+        <result property="sijixingming" column="sijixingming"/>
+        <result property="shoujihao" column="shoujihao"/>
+        <result property="touxiang" column="touxiang"/>
+        <result property="zhanghuyue" column="zhanghuyue"/>
+        <result property="sfsh" column="sfsh"/>
+        <result property="shhf" column="shhf"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.yb.entity.vo.TixianjiluVO" >
+		SELECT * FROM tixianjilu  tixianjilu         
+        <where>${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.yb.entity.vo.TixianjiluVO" >
+		SELECT  tixianjilu.* FROM tixianjilu  tixianjilu 	
+ 		<where>${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.yb.entity.view.TixianjiluView" >
+
+		SELECT  tixianjilu.* FROM tixianjilu  tixianjilu 	        
+        <where>${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.yb.entity.view.TixianjiluView" >
+		SELECT * FROM tixianjilu  tixianjilu <where>${ew.sqlSegment}</where>
+	</select>
+	
+
+
+</mapper>
